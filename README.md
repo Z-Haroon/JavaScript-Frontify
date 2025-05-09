@@ -44,19 +44,8 @@ To get started with **JavaScript Frontify**, follow these steps:
 
 ## 🚀 Projects
 
-### 📁 Project 1: Portfolio Website  
-A modern, responsive portfolio website created using HTML, CSS, and JavaScript. This project showcases skills, work samples, and contact information in a clean and professional layout. It includes smooth scrolling, interactive sections, and reusable components that demonstrate front-end proficiency.
-
-<!-- You can duplicate the format below for more projects -->
-
-### 📁 Project 2: To-Do List Application  
-A sleek and user-friendly task management app built with JavaScript. Users can add, edit, delete, and mark tasks as complete. The application uses local storage to keep data persistent and is fully responsive.
-
-### 📁 Project 3: Modal Popup Gallery  
-An image gallery with click-to-view modals. JavaScript handles dynamic modal opening/closing, while CSS ensures responsive and polished visuals — ideal for product showcases or photo portfolios.
-
-### 📁 Project 4: Countdown Timer  
-An interactive countdown timer created with JavaScript. Users can input time and watch the countdown with live updates and alerts, styled with simple yet effective CSS.
+### 📁 Project 1: Organic Store  
+Under Development
 
 
    
