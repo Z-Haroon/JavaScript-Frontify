@@ -193,9 +193,32 @@
   font-weight: 600;
 }
 
-
-
-
+/* * ********NEW ARRIVAL SECTION******** * */
+#new-arrival__section {
+  padding: 5rem 0;
+}
+.new-arrival__titleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 2rem;
+}
+.new-arrival__heading {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#new-arrival__button {
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: .7rem 2rem;
+  background: var(--color-theme);
+  font-weight: 600;
+  color: var(--color-white);
+  border-radius: 2rem;
+  transition: var(--transition-300ms);
+}
+#new-arrival__button:hover { background: var(--color-black); }
 
 /* * ********BREAKPOINT 1440px******** * */
 @media screen and (max-width: 1440px) {

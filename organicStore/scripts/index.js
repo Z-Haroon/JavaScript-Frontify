@@ -83,7 +83,7 @@ const renderCategories = (categories) => {
   if(!response.ok) throw new Error("Categries API Not working right now please check the issue and then try again.");
     return response.json();
   }).then(categories => {
-    renderCategories(categories)
+    renderCategories(categories);
   }).catch(error => console.error(error));
   
 })();
