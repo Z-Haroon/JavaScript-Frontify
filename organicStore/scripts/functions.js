@@ -36,6 +36,8 @@ export const activeInActiveOnClick = (selector, target, isAdd) => {
 }
 
 // THESE FUNCTIONS FOT MAKE SEARCH FUNCTIONAL AND FILTERING PRODUCTS ACCORDING TO USER INPUT
+
+// THIS FUNCTION RECEIVE REQUEST FOR RENDERING RESULTS
 const receiveReqForRenderResults = (id, title, shortDescription, rating, realPrice, discountedPrice, img, imageAltText, appendContainer) => {
   const resultsProductTemplateEl = document.querySelector("#search-product__template");
   if(!resultsProductTemplateEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Receive.");
@@ -58,6 +60,8 @@ const receiveReqForRenderResults = (id, title, shortDescription, rating, realPri
   appendContainer.append(templateEl);
 };
 
+
+// THIS FUNCTION RECEIVE USER INPUT VALUE AND FILTRATE PRODUCTS AND THEN SEND REQ FOR RENDERING
 const sendReqForRenderResults = (products, userInput) => {
   const resultsContainerEl = document.querySelector(".results_container");
   const resultCounterEl = document.querySelector(".resultsFound");
@@ -78,6 +82,7 @@ const sendReqForRenderResults = (products, userInput) => {
   }
 };
 
+// THIS FUNCTION FOR MANAGE ALL TYPES OF OPERATION OF SEARCH MENU
 export const searchManager = (products) => {
   const searchInputEl = document.querySelector("#main-search");
   const searchResultsContainerEl = document.querySelector(".search-results__container");

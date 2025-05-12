@@ -1,0 +1,77 @@
+[
+  {
+    "id": "categoryID1",
+    "title": "Fruits & Veges",
+    "img": "./assets/images/category-thumb-1.jpg"
+  },
+  {
+    "id": "categoryID2",
+    "title": "Breads & Sweets",
+    "img": "./assets/images/category-thumb-2.jpg"
+  },
+  {
+    "id": "categoryID3",
+    "title": "Vines",
+    "img": "./assets/images/category-thumb-3.jpg"
+  },
+  {
+    "id": "categoryID4",
+    "title": "Beverages",
+    "img": "./assets/images/category-thumb-4.jpg"
+  },
+  {
+    "id": "categoryID5",
+    "title": "Meat Products",
+    "img": "./assets/images/category-thumb-5.jpg"
+  },
+  {
+    "id": "categoryID6",
+    "title": "Green Organic",
+    "img": "./assets/images/category-thumb-6.jpg"
+  },
+  {
+    "id": "categoryID7",
+    "title": "Organic Eggs",
+    "img": "./assets/images/category-thumb-7.jpg"
+  },
+  {
+    "id": "categoryID8",
+    "title": "Breads & Sweets",
+    "img": "./assets/images/category-thumb-8.jpg"
+  },
+    {
+    "id": "categoryID9",
+    "title": "Breads & Sweets",
+    "img": "./assets/images/category-thumb-2.jpg"
+  },
+  {
+    "id": "categoryID10",
+    "title": "Vines",
+    "img": "./assets/images/category-thumb-3.jpg"
+  },
+  {
+    "id": "categoryID11",
+    "title": "Beverages",
+    "img": "./assets/images/category-thumb-4.jpg"
+  },
+  {
+    "id": "categoryID12",
+    "title": "Meat Products",
+    "img": "./assets/images/category-thumb-5.jpg"
+  },
+  {
+    "id": "categoryID13",
+    "title": "Green Organic",
+    "img": "./assets/images/category-thumb-6.jpg"
+  },
+  {
+    "id": "categoryID14",
+    "title": "Organic Eggs",
+    "img": "./assets/images/category-thumb-7.jpg"
+  },
+  {
+    "id": "categoryID15",
+    "title": "Breads & Sweets",
+    "img": "./assets/images/category-thumb-8.jpg"
+  }
+]
