@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="🌿 Organic Store Online – 100% Natural & Healthy Products">
+  <meta name="description" content="🌿 Shop the best organic products online! Fresh, healthy, and 100% natural items delivered to your doorstep. Experience the goodness of nature at unbeatable prices.">
+  <meta name="keywords" content="Organic products, Fresh organic products, Buy organic online, Natural products store, Healthy organic items, Organic food delivery, Pure organic products, 100% natural products, Organic grocery, Fresh organic food, Eco-friendly products">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>🌿 Pure & Fresh Organic Products – Shop Natural Today</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/index.css">
+  <!-- <link rel="stylesheet" href="./styles/index.css"> -->
+  <link rel="shortcut icon" href="./assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+  <div class="loading-screen"> <!--Loading screen-->
+    <div class="rings-container">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+    </div>
+    <img src="./assets/images/logo.svg" alt="Organic Store Official Logo" class="loading-logo">
+  </div> <!--Loading screen-->
+  <header id="main-header"> <!--HEADER-->
+    <div class="top-header__container"> <!--TOP HEADER-->
+      <div class="center top-header">
+        <p class="sologon">Naturally Grown, Purely Made, Truly Healthy Living.</p>
+        <ul class="top-header__listContainer">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./blogs.html">Blogs</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="./contact.html">Help & Support</a></li>
+        </ul>
+      </div>
+    </div> <!--TOP HEADER-->
+    <nav id="navbar" class="center"> <!--Navbar-->
+      <a href="#" class="logo"><img src="./assets/images/logo.svg" alt="organic store official logo"></a>
+      <div class="search-sideMenuIcon__container"> <!--Search Side Menu Container-->
+        <div class="search-container"> <!--Search Container-->
+          <input type="text" placeholder="Search For Groceries..." id="main-search" autocomplete="off">
+          <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <div class="search-results__container"> <!--Search Results Container-->
+            <div class="search-results__innerContainer">
+              <div class="search-results__titleContainer"> <!--Search Results Title Container-->
+                <h2 class="search-results__heading">Results Found</h2>
+                <p class="resultsFound">[ 0 ]</p>
+              </div> <!--Search Results Title Container-->
+              <div class="results_container">
+
+              </div>
+            </div>
+          </div> <!--Search Results Container-->
+        </div> <!--Search Container-->
+        <button id="open-sideMenu__btn"><i class="fa-solid fa-bars-staggered"></i></button>
+      </div> <!--Search Side Menu Container-->
+      <div class="header-icons__container"> <!--Header Icons Container-->
+        <div class="after-login__container"> <!--After Login Container-->
+          <a href="./cart.html"><img src="./assets/icons/cart.png" alt="cart"></a>
+          <a class="userDropdownTarget dropdownUserMenuCommon">
+            <img src="./assets/icons/user.png" alt="useravatar" class="dropdownUserMenuCommon">
+            <span class="dropdown-icon__container dropdownUserMenuCommon"><i class="fa-solid fa-caret-down dropdownUserMenuCommon"></i></span>
+          </a>
+          <div class="profile-dropdown__container dropdownUserMenuCommon"> <!--Profile dropdown Container-->
+            <ul class="profile-dropdown__innerContainer dropdownUserMenuCommon">
+              <li class="dropdownUserMenuCommon"><i class="fa-solid fa-face-smile dropdownUserMenuCommon"></i><a href="#">Manage my account</a></li>
+              <li class="dropdownUserMenuCommon"><i class="fa-solid fa-box dropdownUserMenuCommon"></i><a href="#">My orders</a></li>
+              <li class="dropdownUserMenuCommon"><i class="fa-solid fa-heart dropdownUserMenuCommon"></i><a href="#">My wishlist</a></li>
+              <li class="dropdownUserMenuCommon"><i class="fa-solid fa-star dropdownUserMenuCommon"></i><a href="#">My reviews</a></li>
+              <li class="dropdownUserMenuCommon"><i class="fa-solid fa-ban dropdownUserMenuCommon"></i><a href="#">My returns</a></li>
+              <li class="dropdownUserMenuCommon"><i class="fa-solid fa-right-from-bracket dropdownUserMenuCommon"></i><a>Logout</a></li>
+            </ul>
+          </div> <!--Profile dropdown Container-->
+        </div> <!--After Login Container-->
+        <div class="before-login__continer active"> <!--Before Login Container-->
+          <a href="./login.html">Log In</a>
+          <p>|</p>
+          <a href="./signup.html">Sign Up</a>
+        </div> <!--Before Login Container-->
+      </div> <!--Header Icons Container-->
+    </nav> <!--Navbar-->
+    <div class="side-menu__container"> <!--Side menu Container-->
+      <div class="sideMenu-inner__container">
+        <button id="close-sideMenu__btn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="sideMenu-before__container active"> <!--Side Menu Before Container-->
+          <a href="./login.html">Log In</a>
+          <p>|</p>
+          <a href="./login.html">Sign Up</a>
+        </div> <!--Side Menu Before Container-->
+        <div class="sideMenu-after__loginContainer"> <!--Side menu after login container-->
+          <div class="sideMenu-user__container">
+            <div class="img-name__container">
+              <img src="./assets/icons/user.png" alt="useravatar">
+              <p class="username">Haroon Mehmood</p>
+            </div>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          <ul class="sideMenu-user__listContainer">
+            <li><i class="fa-solid fa-face-smile"></i><a href="#">Manage my account</a></li>
+            <li><i class="fa-solid fa-box"></i><a href="#">My orders</a></li>
+            <li><i class="fa-solid fa-heart"></i><a href="#">My wishlist</a></li>
+            <li><i class="fa-solid fa-star"></i><a href="#">My reviews</a></li>
+            <li><i class="fa-solid fa-ban"></i><a href="#">My returns</a></li>
+            <li><i class="fa-solid fa-right-from-bracket"></i><a>Logout</a></li>
+          </ul>
+        </div> <!--Side menu after login container-->
+        <ul class="sideMenu-list__container">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./blogs.html">Blogs</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="./contact.html">Help & Support</a></li>
+        </ul>
+      </div>
+    </div> <!--Side menu Container-->
+  </header> <!--HEADER-->
+  <main id="main"> <!--Main-->
+    <section id="hero-section"> <!--HERO SECTION-->
+      <div class="center">
+        <div class="hero-headings__container"> <!--Hero Heading Container-->
+          <h2 class="hero-heading"><span class="hero-green">Organic</span> Foods at your <span class="hero-bold">Doorsteps</span></h2>
+          <p class="hero-sub__heading">Bringing Nature’s Best Right to Your Home.</p>
+          <div class="hero-bottoms__container">
+            <a href="./shop.html">START SHOPPING</a>
+            <a>join now</a>
+          </div>
+        </div> <!--Hero Heading Container-->
+        <div class="hero-details__container"> <!--Hero details Container-->
+          <div class="hero-detail">
+            <h2 class="hero-detail__heading">14k+</h2>
+            <p class="hero-detao;__paragraph">PRODUCT <br> Varieties</p>
+          </div>
+          <div class="hero-detail">
+            <h2 class="hero-detail__heading">50k+</h2>
+            <p class="hero-detao;__paragraph">Happy <br> Customers</p>
+          </div>
+          <div class="hero-detail">
+            <h2 class="hero-detail__heading">14+</h2>
+            <p class="hero-detao;__paragraph">Store <br> Locations</p>
+          </div>
+        </div> <!--Hero details Container-->
+        <div class="hero-bottom__parentContainer"> <!--Hero Bottom Containers Container-->
+          <div class="hero-bottom__container">
+            <div class="img-container"><img src="./assets/icons/refresh.png" alt="refresh icon"></div>
+            <div class="bottom-details__container">
+              <h2>Fresh from farm</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, nesciunt.</p>
+            </div>
+          </div>
+          <div class="hero-bottom__container">
+            <div class="img-container"><img src="./assets/icons/leaf.png" alt="leaf icon"></div>
+            <div class="bottom-details__container">
+              <h2>100% Organic</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, nesciunt.</p>
+            </div>
+          </div>
+          <div class="hero-bottom__container">
+            <div class="img-container"><img src="./assets/icons/truck.png" alt="refresh icon"></div>
+            <div class="bottom-details__container">
+              <h2>Free delivery</h2>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, nesciunt.</p>
+            </div>
+          </div>
+        </div><!--Hero Bottom Containers Container-->
+      </div>
+    </section> <!--HERO SECTION-->
+    <section id="cateogry-section"> <!--Category section-->
+      <div class="center">
+        <div class="category-title__container"> <!--Category title Contianer-->
+          <h2 class="categpry-title">Category</h2>
+          <div class="buttons-container">
+            <button class="category-button"></button>
+            <button class="category-button"></button>
+          </div>
+        </div> <!--Category title Contianer-->
+      </div>
+    </section> <!--Category section-->
+  </main> <!--Main-->
+
+
+  
+  <!-- SEARCH PRODUCT TEMPLATE -->
+  <template id="search-product__template">
+    <a href="./product.html" class="search-product__card"> <!--Search Result Product Card-->
+      <div class="search-product__imgContainer">
+        <img src="./assets/images/product-thumb-1.png" alt="product image">
+      </div>
+       <div class="search-products__details">
+         <h2 class="search-product__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, excepturi.</h2>
+         <p class="search-product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aliquam hic reiciendis, repellat sunt mollitia soluta consequuntur quas saepe temporibus.</p>
+         <div class="rating-percentage__container">
+          <div class="rating-container">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+           </div>
+           <p class="search-result__percentage">45% OFF</p>
+         </div>
+         <div class="price-container">
+          <h3 class="original-price">RS. 400,000</h3>
+          <h3 class="discounted-price">RS. 200,000</h3>
+        </div>
+      </div>
+    </a> <!--Search Result Product Card--> 
+  </template>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/c4e19f2a49.js" crossorigin="anonymous"></script>
+  <script src="./scripts/main.js" type="module"></script>
+  <script src="./scripts/index.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+</html>
