@@ -37,7 +37,7 @@
   background-image: url("../assets/images/banner-1.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  margin: 6.6rem 0;
+  margin: 6.6rem 0 0;
   box-shadow: var(--box-shadow-light);
 }
 #hero-section .center {
@@ -141,6 +141,62 @@
   font-size: 1.1rem;
   line-height: 1.2;
 }
+
+/* * ********CATEGORY SECTION******** * */
+#cateogry-section {
+  padding: 2rem 0;
+}
+.category-title__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 2rem;
+}
+.categpry-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.category-button {
+  height: 2.5rem;
+  width: 2.5rem;
+  background: #ccc;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  transition: var(--transition-300ms);
+}
+.category-button:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition-300ms);
+  cursor: pointer;
+}
+.category:hover {
+  transform: scale(.9);
+}
+.category img {
+  width: 9rem;
+  border-radius: 50%;
+  margin: 0 0 .5rem;
+}
+.category p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+
+
 
 /* * ********BREAKPOINT 1440px******** * */
 @media screen and (max-width: 1440px) {
