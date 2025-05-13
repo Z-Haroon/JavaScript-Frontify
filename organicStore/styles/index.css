@@ -235,6 +235,7 @@
   position: relative;
   padding: 1rem 1rem 4rem;
   box-shadow: var(--box-shadow-light);
+  height: 24rem;
 }
 .product-card:hover {
   box-shadow: var(--box-shadow-mid);
@@ -248,11 +249,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 55%;
 }
 .product-card .product-img__container img {
   object-fit: contain;
-  height: 12rem;
+  height: 11rem;
 }
 .product-card .product-details__container {
   padding: .5rem .4rem 0;
@@ -411,6 +411,9 @@
   .product-card .product-addToCart__container {
     opacity: 1;
   }
+  .product-card {
+    height: 25.5rem;
+  }
   .product-card input {
     display: none;
   }
@@ -427,10 +430,11 @@
   /* * ********NEW ARRIVAL SECTION******** * */
   .newArrival-products__container {
     grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
   }
   .product-card {
-    max-width: fit-content;
+    max-width: unset;
+    height: 25rem;
+    border-radius: 5px;
   }
 }
 

@@ -14,12 +14,4 @@ import { activeInActiveOnClick, inActiveOnScroll, inActiveOnWindowClick, searchM
   activeInActiveOnClick(".side-menu__container", "#open-sideMenu__btn", true);
   activeInActiveOnClick(".side-menu__container", "#close-sideMenu__btn", false);
   toggleOnClick(".sideMenu-user__listContainer", ".sideMenu-user__container");
-
-  // FETCHING PRODUCTS FROM API FOR RENDER PRODUCTS ON SEARCH BAAR
-  fetch("./assets/API/data.json").then(response => {
-    if(!response.ok) throw new Error("Products API Not working right now please check the issue and then try again.");
-    return response.json();
-  }).then(products => {
-    searchManager(products);
-  }).catch(error => console.error(error));
 })();

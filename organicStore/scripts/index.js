@@ -1,4 +1,4 @@
-import { inActiveOnLoad } from "./functions.js";
+import { inActiveOnLoad, renderProductsManager } from "./functions.js";
 
 // THIS IS CATEGORY SECTION SLIDER PROPERTIES
 let swiper = new Swiper(".category-mySwiper", {
@@ -84,6 +84,14 @@ const renderCategories = (categories) => {
     return response.json();
   }).then(categories => {
     renderCategories(categories);
+  }).catch(error => console.error(error));
+
+  // FETCHING PRODUCTS FROM API FOR RENDER PRODUCTS
+  fetch("./assets/API/data.json").then(response => {
+    if(!response.ok) throw new Error("Products API Not working right now please check the issue and then try again.");
+    return response.json();
+  }).then(products => {
+    renderProductsManager(products, ".newArrival-products__container", "#new-arrival__button", 0, 10);
   }).catch(error => console.error(error));
   
 })();

@@ -87,7 +87,6 @@ export const searchManager = (products) => {
   const searchInputEl = document.querySelector("#main-search");
   const searchResultsContainerEl = document.querySelector(".search-results__container");
   if(!searchInputEl || !searchResultsContainerEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Search Manager.");
-
   searchInputEl.addEventListener("input", () => {
     let filteredInput = searchInputEl.value.trim();
     if(filteredInput.length > 2) {
@@ -96,5 +95,62 @@ export const searchManager = (products) => {
     } else {
       searchResultsContainerEl.classList.remove("active");
     }
+  });
+};
+
+
+// THESE FUNCTIONS FOR RENDER PRODUCTS WITH MAKE VIEW ALL BUTTON FUNCTIONAL
+const receiveReqForRenderProducts = (id, title, rating, realPrice, discountedPrice, img, imageAltText, appendContainer) => {
+  const productTemplateEl = document.querySelector("#product-card__template");
+  if(!productTemplateEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Receive Req or Render Products.");
+  let productTemplate = document.importNode(productTemplateEl.content, true);
+  if(title.length > 50) title = title.slice(0, 50) +"...";
+  productTemplate.querySelector(".product-card").setAttribute("id", id);
+  productTemplate.querySelector(".product-img__container img").src = img;
+  productTemplate.querySelector(".product-img__container img").alt = imageAltText;
+  productTemplate.querySelector(".product-title").innerText = title;
+  let ratingContainerEl = productTemplate.querySelector(".product-rating");
+  for(let i = 0; i < rating; i++) {
+    let creatIconEl = document.createElement("i");
+    creatIconEl.classList.add("fa-solid");
+    creatIconEl.classList.add("fa-star");
+    ratingContainerEl.append(creatIconEl);
+  }
+  productTemplate.querySelector(".product-discount__percentage").innerText = `${Math.round(((realPrice - discountedPrice) * 100) / realPrice)}% OFF`;
+  productTemplate.querySelector(".product-original__price").innerText = `Rs.${realPrice}`;
+  productTemplate.querySelector(".product-discounted__price").innerText = `Rs.${discountedPrice}`;
+  appendContainer.append(productTemplate);
+
+};
+
+const sendReqForRenderProducts = (startsWith, endsWith, renderContainer, products) => {
+  let renderTheseProducts = products.slice(startsWith, endsWith);
+  renderTheseProducts.forEach(currentProduct => {
+    const {id, title, shortDescription, longDescription, rating, realPrice, discountedPrice, img, category, stock, imageAltText, imageTitle} = currentProduct;
+    receiveReqForRenderProducts(id, title, rating, realPrice, discountedPrice, img, imageAltText, renderContainer);
+  });
+};
+
+export const renderProductsManager = (products, renderContainer, btn, startsWith, endsWith) => {
+  const renderContainerEl = document.querySelector(renderContainer);
+  const buttonEl = document.querySelector(btn);
+  let resetEnd = endsWith;
+  if(!renderContainerEl || !buttonEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Render Products Manager.");
+  sendReqForRenderProducts(startsWith, endsWith, renderContainerEl, products);
+  
+  buttonEl.addEventListener("click", () => {
+    renderContainerEl.innerHTML = ``;
+    endsWith += 10;
+    if(buttonEl.classList.contains("active")) {
+      buttonEl.classList.remove("active");
+      buttonEl.innerText = "View More";
+      endsWith = resetEnd;
+    }
+    if(endsWith >= products.length) {
+      endsWith = products.length;
+      buttonEl.innerText = "View Less";
+      buttonEl.classList.add("active");
+    };
+    sendReqForRenderProducts(startsWith, endsWith, renderContainerEl, products);
   });
 };
