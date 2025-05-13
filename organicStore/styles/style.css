@@ -630,6 +630,29 @@ body {
 }
 .mini-banner:nth-child(2) { background-image:linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../assets/images/banner-ad-3.jpg") ;}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* * ********BREAKPOINT 1440px******** * */
 @media screen and (max-width: 1440px) {
   html { font-size: 15px; }
@@ -687,6 +710,16 @@ body {
   #open-sideMenu__btn {
     font-size: 2.2rem;
   }
+
+  /* * ********MINI BANNER SECTION******** * */
+  #mini-banner__section {
+    height: 28rem;
+  }
+  #mini-banner__section .center {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .mini-banners__container {display: none;}
 }
 
 /* * ********BREAKPOINT 768px******** * */

@@ -137,7 +137,8 @@ export const renderProductsManager = (products, renderContainer, btn, startsWith
   let resetEnd = endsWith;
   if(!renderContainerEl || !buttonEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Render Products Manager.");
   sendReqForRenderProducts(startsWith, endsWith, renderContainerEl, products);
-  
+
+  if(!btn) return;
   buttonEl.addEventListener("click", () => {
     renderContainerEl.innerHTML = ``;
     endsWith += 10;
