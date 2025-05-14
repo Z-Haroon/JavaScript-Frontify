@@ -1,4 +1,4 @@
-import { inActiveOnLoad, renderProductsManager } from "./functions.js";
+import { addShakingEffect, handleUserEmailError, handleUsernameError, inActiveOnLoad, renderProductsManager, showErrorMessage, showErrorOnSubmit } from "./functions.js";
 
 // THIS IS CATEGORY SECTION SLIDER PROPERTIES
 let swiper = new Swiper(".category-mySwiper", {
@@ -73,6 +73,42 @@ const renderCategories = (categories) => {
   });
 };
 
+// THIS FUNCTION FOR BANNER FORM MAKE FUNCTIONAL
+const manageBannerForm = () => {
+  const submitBtnEl = document.querySelector("#formBannerButton");
+  const submitButtonErrorEl = document.querySelector(".formBanner-buttonError");
+  const nameInputEl = document.querySelector("#formBannerNameInput");
+  const emailInputEl = document.querySelector("#formBannerEmailInput");
+  handleUsernameError("#formBannerNameInput");
+  handleUserEmailError("#formBannerEmailInput");
+  if(!submitBtnEl || !submitButtonErrorEl || !nameInputEl || !emailInputEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Manage Banner Form.");
+  submitBtnEl.addEventListener("click", () => {
+    showErrorOnSubmit("#formBannerNameInput", ".formBanner-nameError");
+    showErrorOnSubmit("#formBannerEmailInput", ".formBanner-emailError");
+    let nameConditionsCheck = nameInputEl.getAttribute("data-inputCheck");
+    let emailConditionCheck = emailInputEl.getAttribute("data-inputCheck");
+    if(nameConditionsCheck === "true" && emailConditionCheck === "true") {
+      nameInputEl.value = "";
+      emailInputEl.value = "";
+      submitButtonErrorEl.style.color = "var(--color-theme)";
+      showErrorMessage("Success", ".formBanner-buttonError");
+      setTimeout(() => {
+        showErrorMessage("", ".formBanner-buttonError");  
+      }, 3000);
+    } else if(nameConditionsCheck === "true" && emailConditionCheck === "false") {
+        showErrorMessage("Something Went wrong with your email Input Field.", ".formBanner-buttonError");  
+        addShakingEffect(emailInputEl); 
+    } else if (nameConditionsCheck == "false"&& emailConditionCheck ==="true") {
+        showErrorMessage("Something Went wrong with your name Input Field.", ".formBanner-buttonError");  
+        addShakingEffect(nameInputEl);
+    } else {
+        showErrorMessage("Something went wrong with Email And Name Input Field", ".formBanner-buttonError");  
+        addShakingEffect(nameInputEl);
+        addShakingEffect(emailInputEl); 
+    }
+  });
+};
+
 
 (() => {
   // THIS FUNCTION FOR HIDE LOADING SCREEN
@@ -92,6 +128,9 @@ const renderCategories = (categories) => {
     return response.json();
   }).then(products => {
     renderProductsManager(products, ".newArrival-products__container", "#new-arrival__button", 0, 10);
+    renderProductsManager(products, ".feature-products__container", false, 8, 13);
   }).catch(error => console.error(error));
-  
+
+  // CALLING THIS FUNCTION FOR MANAGE ALL TYPES OF OPERATION OF BANNER FORM
+  manageBannerForm();
 })();

@@ -1,4 +1,4 @@
-import { activeInActiveOnClick, inActiveOnScroll, inActiveOnWindowClick, searchManager, toggleOnClick } from "./functions.js";
+import { activeInActiveOnClick, addBlurListener, inActiveOnScroll, inActiveOnWindowClick, searchManager, toggleOnClick } from "./functions.js";
 
 (() => {
   // CALLING THIS FUNCTION HIDE TOP HEADER ON SCROLL
@@ -14,4 +14,15 @@ import { activeInActiveOnClick, inActiveOnScroll, inActiveOnWindowClick, searchM
   activeInActiveOnClick(".side-menu__container", "#open-sideMenu__btn", true);
   activeInActiveOnClick(".side-menu__container", "#close-sideMenu__btn", false);
   toggleOnClick(".sideMenu-user__listContainer", ".sideMenu-user__container");
+
+  fetch("./assets/API/data.json").then(response => {
+    if(!response.ok) throw new Error("Products API Not working right now please check the issue and then try again.");
+    return response.json();
+  }).then(products => {
+    searchManager(products);
+  }).catch(error => console.error(error));
+
+  // CALLING THIS FUNCTION FOR ADD BLUR LISTENER 
+  addBlurListener();
+
 })();

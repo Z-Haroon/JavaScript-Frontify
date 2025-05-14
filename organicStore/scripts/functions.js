@@ -100,6 +100,8 @@ export const searchManager = (products) => {
 
 
 // THESE FUNCTIONS FOR RENDER PRODUCTS WITH MAKE VIEW ALL BUTTON FUNCTIONAL
+
+// THIS FUNCTION REVEIVE REQ AND RENDER PRODUCTS
 const receiveReqForRenderProducts = (id, title, rating, realPrice, discountedPrice, img, imageAltText, appendContainer) => {
   const productTemplateEl = document.querySelector("#product-card__template");
   if(!productTemplateEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Receive Req or Render Products.");
@@ -123,6 +125,7 @@ const receiveReqForRenderProducts = (id, title, rating, realPrice, discountedPri
 
 };
 
+// THIS FUNCTION DESTRUTURE PRODUCTS FROM API AND MAKE REQ FOR RENDER PRODUCTS
 const sendReqForRenderProducts = (startsWith, endsWith, renderContainer, products) => {
   let renderTheseProducts = products.slice(startsWith, endsWith);
   renderTheseProducts.forEach(currentProduct => {
@@ -131,11 +134,12 @@ const sendReqForRenderProducts = (startsWith, endsWith, renderContainer, product
   });
 };
 
+// THIS FUNCTION FOR GET CONTAINER DATA FOR MAKE A REQUEST FOR RENDER PRODUCTS
 export const renderProductsManager = (products, renderContainer, btn, startsWith, endsWith) => {
   const renderContainerEl = document.querySelector(renderContainer);
   const buttonEl = document.querySelector(btn);
   let resetEnd = endsWith;
-  if(!renderContainerEl || !buttonEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Render Products Manager.");
+  if(!renderContainerEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Render Products Manager.");
   sendReqForRenderProducts(startsWith, endsWith, renderContainerEl, products);
 
   if(!btn) return;
@@ -154,4 +158,143 @@ export const renderProductsManager = (products, renderContainer, btn, startsWith
     };
     sendReqForRenderProducts(startsWith, endsWith, renderContainerEl, products);
   });
+};
+
+// THIS FUNTION FOR ADD RED AND GREEN BORDER IN WRONG INPUT ENTRY
+const addRedGreenBorder = (input, isRed) => {
+  if(isRed) {
+    input.classList.remove("greenBorder");
+    input.classList.add("redBorder");
+  } else {
+    input.classList.remove("redBorder");
+    input.classList.add("greenBorder");
+  }
+};
+
+// THIS FUNCTION FOR ADD SHAKING EFFECT IN INPUT AFTER WRONG INPUT
+export const addShakingEffect = (input) => {
+  let position = 20;
+  let count = 0;
+  input.style.transition = "all 200ms ease"
+  let interval = setInterval(() => {
+    input.style.transform = `translateX(${position}px)`;
+    position = -position;
+    count++;
+    if(count > 4) {
+      input.style.transform = `translateX(0px)`;
+      clearInterval(interval);
+      count = 0;
+    } 
+  }, 100);
+};
+
+// THIS FUNCTION FOR SHOW ERROR MESSAGE
+export const showErrorMessage = (errorMessage, messageEl) => {
+  const errorMessageEl = document.querySelector(messageEl)
+  if(!errorMessageEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Show Error Message.");
+  errorMessageEl.style.color = "#ff4646";
+  errorMessageEl.innerText = errorMessage;
+  errorMessageEl.classList.add("active");
+};
+
+// THIS FUNCTION FOR ADD FOCUS LISTENER FOR GIVE GREEN BORDER TO INPUT
+const addFocusListener = (input) => input.addEventListener("focus", () => addRedGreenBorder(input, false)); 
+
+// THIS FUNCTION FOR ADD BLUR LISTENER ON EMPTY INPUTS ANF GIVE RED BORDER
+export const addBlurListener = () => {
+  const inputElements = document.querySelectorAll(".blur");
+  if(inputElements.length === 0) return;
+  inputElements.forEach(currentElement => {
+    let isAdd = false;
+    currentElement.addEventListener("blur", () => {
+      if(currentElement.value.trim().length === 0) {
+        addRedGreenBorder(currentElement, true);
+        addShakingEffect(currentElement);
+        if(!isAdd) {
+          addFocusListener(currentElement);
+          isAdd = true;
+        }
+      }
+    });
+  });
+};
+
+// THIS FUNCTION FOR HANDLE ALL TYPES OF ERRORS IN CREATING NAME
+export const handleUsernameError = (input) => {
+  const inputEl = document.querySelector(input);
+  if(!inputEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Handle Username Error.");
+  inputEl.addEventListener("input", () => {
+    let value = inputEl.value.trim();
+    if(value.length < 2) {
+      addRedGreenBorder(inputEl, true);
+      inputEl.setAttribute("data-inputCheck", false);
+      inputEl.setAttribute("data-errorCode", "empty");
+    } else if (/[^a-zA-Z ]/.test(value)) {
+      addRedGreenBorder(inputEl, true);
+      inputEl.setAttribute("data-inputCheck", false);
+      inputEl.setAttribute("data-errorCode", "numberinclname");
+    } else {
+      addRedGreenBorder(inputEl, false);
+      inputEl.setAttribute("data-inputCheck", true);
+      inputEl.setAttribute("data-errorCode", "success");
+    }
+  });
+};
+
+
+// THIS FUNCTION FOR HANDLE ALL TYPES OF ERRORS IN EMAIL
+export const handleUserEmailError = (input) => {
+  const inputEl = document.querySelector(input);
+  if(!inputEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Handle User Email Error.");
+  inputEl.addEventListener("input", () => {
+    let value = inputEl.value.trim();
+    if(value.length < 6) {
+      addRedGreenBorder(inputEl, true);
+      inputEl.setAttribute("data-inputCheck", false);
+      inputEl.setAttribute("data-errorCode", "empty");
+    } else if (!value.includes("@")) {
+      addRedGreenBorder(inputEl, true);
+      inputEl.setAttribute("data-inputCheck", false);
+      inputEl.setAttribute("data-errorCode", "specialnotincl");
+    } else {
+      addRedGreenBorder(inputEl, false);
+      inputEl.setAttribute("data-inputCheck", true);
+      inputEl.setAttribute("data-errorCode", "success");
+    }
+  });
+};
+
+// THIS FUNCTION FOR SHOW ERRORS IN NAME
+export const showErrorOnSubmit = (input, errorEl) => {
+  const inputEl = document.querySelector(input);
+  const errorElement = document.querySelector(errorEl);
+  if(!inputEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: show Error.");
+  let getErrorType = inputEl.getAttribute("data-errorCode");
+  switch (getErrorType) {
+    case "empty":
+      showErrorMessage("Empty Input Field Not Allowed.", errorEl);
+      addRedGreenBorder(inputEl, true);
+      addShakingEffect(inputEl);
+      return false;
+    break;
+    case "specialnotincl":
+      showErrorMessage("Enter your valid email address example - example@organicstore.com.", errorEl);
+      addRedGreenBorder(inputEl, true);
+      addShakingEffect(inputEl);
+      return false;
+    break;
+      
+    case "numberinclname":
+      showErrorMessage("Special Character and numbers not allowed", errorEl);
+      addRedGreenBorder(inputEl, false);
+      addShakingEffect(inputEl);
+      return false
+    break;
+
+    case "success":
+      showErrorMessage("", errorEl);
+      addRedGreenBorder(inputEl, false);
+      return true;
+    break;
+  }
 };

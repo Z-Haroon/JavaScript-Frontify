@@ -81,7 +81,6 @@ html {
 body {
   background: var(--color-off-white);
   line-height: 1.7;
-  height: 400vh;
 }
 
 /* * ********PREBUILD CLASSES******** * */
@@ -547,109 +546,6 @@ body {
 .sideMenu-list__container li a {transition: var(--transition-300ms);}
 .sideMenu-list__container li a:hover {color: var(--color-theme);}
 
-/* * ********MINI BANNER SECTION******** * */
-#mini-banner__section {
-  padding: 3rem 0 0;
-  height: 30rem;
-}
-#mini-banner__section .center {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  height: 100%;
-}
-.large-banner {
-  height: 100%;
-  box-shadow: var(--box-shadow-light);
-  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("../assets/images/banner-ad-1.jpg");
-  background-size: cover;
-  background-position: left;
-  border-radius: 8px;
-  color: var(--color-white);
-  display: flex;
-  padding: 0 0 0 10%;
-  flex-direction: column;
-  justify-content: center;
-}
-.largeBanner-main__heading {
-  font-size: 2.4rem;
-}
-.largeBanner-sub__heading {
-  font-size: 1.5rem;
-  margin: 1rem 0 3rem;
-}
-.largeBanner-btn, 
-.miniBanner-btn {
-  border-bottom: 2px solid var(--color-light-gray);
-  width: fit-content;
-  padding: 0 5px 5px;
-  position: relative;
-  transition: var(--transition-300ms);
-}
-.largeBanner-btn::after,
-.miniBanner-btn::after {
-  content: "";
-  height: 1px;
-  position: absolute;
-  bottom: -1.5px;
-  left: 0;
-  border-bottom: 2px solid var(--color-light-blue);
-  width: 0;
-  transition: var(--transition-300ms);
-}
-.largeBanner-btn:hover,
-.miniBanner-btn:hover { color: var(--color-light-blue); }
-.largeBanner-btn:hover::after,
-.miniBanner-btn:hover::after { width: 100%; }
-.mini-banners__container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-}
-.mini-banner {
-  height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("../assets/images/banner-ad-2.jpg");
-  background-size: cover;
-  background-position: center left;
-  background-repeat: no-repeat;
-  box-shadow: var(--box-shadow-light);
-  border-radius: 6px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 0 0 10%;
-  color: var(--color-white);
-}
-.miniBanner-main__heading {
-  font-size: 2rem;
-}
-.miniBanner-sub__heading {
-  font-size: 1.3rem;
-  margin: 1rem 0 2.3rem;
-}
-.mini-banner:nth-child(2) { background-image:linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../assets/images/banner-ad-3.jpg") ;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -710,16 +606,6 @@ body {
   #open-sideMenu__btn {
     font-size: 2.2rem;
   }
-
-  /* * ********MINI BANNER SECTION******** * */
-  #mini-banner__section {
-    height: 28rem;
-  }
-  #mini-banner__section .center {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  .mini-banners__container {display: none;}
 }
 
 /* * ********BREAKPOINT 768px******** * */
@@ -756,7 +642,6 @@ body {
 
   /* * ********SIDEMENU CONTAINER******** * */
   .side-menu__container.active { width: 95%; }
-
 }
 
 /* * ********BREAKPOINT 576px******** * */
