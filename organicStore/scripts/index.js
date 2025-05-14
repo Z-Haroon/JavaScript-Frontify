@@ -129,6 +129,8 @@ const manageBannerForm = () => {
   }).then(products => {
     renderProductsManager(products, ".newArrival-products__container", "#new-arrival__button", 0, 10);
     renderProductsManager(products, ".feature-products__container", false, 8, 13);
+    renderProductsManager(products, ".mostPopular-products__container", "#most-popular__button", 15, 20);
+    renderProductsManager(products, ".forYou-products__container", "#for-you__button", 0, 20);
   }).catch(error => console.error(error));
 
   // CALLING THIS FUNCTION FOR MANAGE ALL TYPES OF OPERATION OF BANNER FORM
