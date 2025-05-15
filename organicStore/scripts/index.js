@@ -1,4 +1,4 @@
-import { addShakingEffect, handleUserEmailError, handleUsernameError, inActiveOnLoad, renderProductsManager, showErrorMessage, showErrorOnSubmit } from "./functions.js";
+import { addShakingEffect, handleUserEmailError, handleUsernameError, inActiveOnLoad, manageBlogRendering, renderProductsManager, showErrorMessage, showErrorOnSubmit } from "./functions.js";
 
 // THIS IS CATEGORY SECTION SLIDER PROPERTIES
 let swiper = new Swiper(".category-mySwiper", {
@@ -135,4 +135,12 @@ const manageBannerForm = () => {
 
   // CALLING THIS FUNCTION FOR MANAGE ALL TYPES OF OPERATION OF BANNER FORM
   manageBannerForm();
+
+  // FETCHING BLOGS FROM API
+  fetch("./assets/API/blogs.json").then(response => {
+    if(!response.ok) throw new Error("Blogs API Not working right now please check the issue and then try again.");
+    return response.json();
+  }).then(blogs => {
+    manageBlogRendering(blogs, 0, 3, ".blogs-container", "#blogsViewMoreBtn");
+  }).catch(error => console.error(error));
 })();

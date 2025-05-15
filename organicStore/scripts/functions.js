@@ -298,3 +298,48 @@ export const showErrorOnSubmit = (input, errorEl) => {
     break;
   }
 };
+
+// THESE FUNCTIONS FOR RENDER BLOGS ON
+const receiveReqForRenderBlogs = (id, title, img, date, type, paragraphOne, appendContainer) => {
+  const blogTemplateEl = document.querySelector("#blog-card__template");
+  if(!blogTemplateEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Receive Req For Render Blogs.");
+  let blogTemplate = document.importNode(blogTemplateEl.content, true);
+  blogTemplate.querySelector(".blog-card").setAttribute("id", id);
+  blogTemplate.querySelector(".blog-card img").src = img;
+  blogTemplate.querySelector(".blog-card img").alt = title;
+  blogTemplate.querySelector(".currentData").innerText = date;
+  blogTemplate.querySelector(".type").innerText = type;
+  blogTemplate.querySelector(".blog-title").innerText = title;
+  blogTemplate.querySelector(".blog-short__description").innerText = paragraphOne;
+  appendContainer.append(blogTemplate);
+};
+const sendReqForRenderBlogs = (blogs, startsWith, endsWith, renderContainer) => {
+  let renderTheseBlogs = blogs.slice(startsWith, endsWith);
+  renderTheseBlogs.forEach(currentBlog => {
+    const {id, title, shortDescription, img, date, type, paragraphOne, paragraphTwo, paragraphThree, paragraphFour} = currentBlog;
+    receiveReqForRenderBlogs(id, title, img, date, type, paragraphOne, renderContainer);
+  });
+};
+export const manageBlogRendering = (blogs, startsWith, endsWith, renderContainer, btn) =>  {
+  const buttonEl = document.querySelector(btn);
+  const renderContainerEl = document.querySelector(renderContainer);
+  if(!buttonEl || !renderContainerEl) return console.error("Element Not Found. File: functions.js, Line: 00, Func: Manage Blog Rendering.");
+  sendReqForRenderBlogs(blogs, startsWith, endsWith, renderContainerEl);
+  let resetEnd = endsWith;
+  if(!buttonEl) return;
+  buttonEl.addEventListener("click", () => {
+    renderContainerEl.innerHTML = ``;
+    endsWith += 3;
+    if(buttonEl.classList.contains("active")) {
+      buttonEl.classList.remove("active");
+      buttonEl.innerText = "View More";
+      endsWith = resetEnd;
+    }
+    if(endsWith >= blogs.length) {
+      endsWith = blogs.length;
+      buttonEl.innerText = "View Less";
+      buttonEl.classList.add("active");
+    };
+    sendReqForRenderBlogs(blogs, startsWith, endsWith, renderContainerEl);
+  });
+};

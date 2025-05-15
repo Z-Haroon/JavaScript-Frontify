@@ -594,6 +594,11 @@
   border: 2px solid #ccc;
   padding: 1rem;
   border-radius: 10px;
+  transition: var(--transition-300ms);
+  background-color: var(--color-white);
+}
+.blog-card:hover {
+  box-shadow: var(--box-shadow-light);
 }
 .blog-card img {
   height: 15rem;

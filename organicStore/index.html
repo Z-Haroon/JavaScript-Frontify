@@ -263,49 +263,10 @@
     <section id="blogs-section"> <!--Blogs Section-->
       <div class="center">
         <div class="blogs-title__container"> <!--Blogs Title Section-->
-          <h2 class="blogs-section__title">Our Blogs</h2>
+          <h2 class="blogs-section__title">Our Recent Blogs</h2>
           <button id="blogsViewMoreBtn">View More</button>
         </div> <!--Blogs Title Section-->
         <div class="blogs-container">
-          <article class="blog-card"> <!--BLOG CARD-->
-            <a href="#">
-              <img src="./assets/images/post-thumbnail-1.jpg" alt="">
-              <div class="blog-details">
-                <div class="blog-upload_infoContainer">
-                  <div class="blog-upload__info"><i class="fa-solid fa-message"></i> <p>22 AUG 2021</p></div>
-                  <div class="blog-upload__info"><i class="fa-solid fa-folder"></i> <p>TIPS & TRICKS</p></div>
-                </div>
-                <h2 class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, voluptatem.</h2>
-                <p class="blog-short__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem maxime cum quo iusto perferendis magni veritatis vero tempore. Quidem perspiciatis voluptates molestias nam inventore temporibus labore nulla dolor quod neque?</p>
-              </div>
-            </a>
-          </article> <!--BLOG CARD-->
-                    <article class="blog-card"> <!--BLOG CARD-->
-            <a href="#">
-              <img src="./assets/images/post-thumbnail-1.jpg" alt="">
-              <div class="blog-details">
-                <div class="blog-upload_infoContainer">
-                  <div class="blog-upload__info"><i class="fa-solid fa-message"></i> <p>22 AUG 2021</p></div>
-                  <div class="blog-upload__info"><i class="fa-solid fa-folder"></i> <p>TIPS & TRICKS</p></div>
-                </div>
-                <h2 class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, voluptatem.</h2>
-                <p class="blog-short__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem maxime cum quo iusto perferendis magni veritatis vero tempore. Quidem perspiciatis voluptates molestias nam inventore temporibus labore nulla dolor quod neque?</p>
-              </div>
-            </a>
-          </article> <!--BLOG CARD-->
-                    <article class="blog-card"> <!--BLOG CARD-->
-            <a href="#">
-              <img src="./assets/images/post-thumbnail-1.jpg" alt="">
-              <div class="blog-details">
-                <div class="blog-upload_infoContainer">
-                  <div class="blog-upload__info"><i class="fa-solid fa-message"></i> <p>22 AUG 2021</p></div>
-                  <div class="blog-upload__info"><i class="fa-solid fa-folder"></i> <p>TIPS & TRICKS</p></div>
-                </div>
-                <h2 class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, voluptatem.</h2>
-                <p class="blog-short__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem maxime cum quo iusto perferendis magni veritatis vero tempore. Quidem perspiciatis voluptates molestias nam inventore temporibus labore nulla dolor quod neque?</p>
-              </div>
-            </a>
-          </article> <!--BLOG CARD-->
         </div>
       </div>
     </section> <!--Blogs Section-->
@@ -363,6 +324,21 @@
         <span class="addToWishlist"><i class="fa fa-heart"></i></span>
       </div>
     </article> <!-- Product Card -->
+  </template>
+  <template id="blog-card__template">
+    <article class="blog-card"> <!--BLOG CARD-->
+      <a href="./blog.html">
+        <img src="./assets/images/post-thumbnail-1.jpg" alt="">
+        <div class="blog-details">
+          <div class="blog-upload_infoContainer">
+            <div class="blog-upload__info"><i class="fa-solid fa-message"></i> <p class="currentData">22 AUG 2021</p></div>
+            <div class="blog-upload__info"><i class="fa-solid fa-folder"></i> <p class="type">TIPS & TRICKS</p></div>
+          </div>
+          <h2 class="blog-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, voluptatem.</h2>
+          <p class="blog-short__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem maxime cum quo iusto perferendis magni veritatis vero tempore. Quidem perspiciatis voluptates molestias nam inventore temporibus labore nulla dolor quod neque?</p>
+        </div>
+      </a>
+    </article> <!--BLOG CARD-->
   </template>
 
   <!-- Scripts -->
