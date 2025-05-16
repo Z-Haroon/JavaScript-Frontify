@@ -547,7 +547,76 @@ body {
 .sideMenu-list__container li a:hover {color: var(--color-theme);}
 
 
-
+/* * ********FOOTER******** * */
+#main-footer {
+  background: var(--color-white);
+  padding: 3rem 0 1rem;
+  box-shadow: var(--box-shadow-light);
+}
+.footer-rows__container {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-row img {
+  width: 15rem;
+  margin: 0 0 2rem;
+}
+.footer-logo__row {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.footer-social__linksContainer {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.footer-social__linksContainer a {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-white);
+  transition: var(--transition-300ms);
+}
+.footer-social__linksContainer a:hover {
+  background: var(--color-black);
+}
+.footer-row__heading {
+  font-size: 1.6rem;
+  margin: 0 0 1rem;
+}
+.footer-row__listContainer li {
+  font-size: 1.1rem;
+  margin: 0 0 .3rem;
+}
+.footer-row__listContainer li a {
+  transition: var(--transition-300ms);
+}
+.footer-row__listContainer li a:hover {
+  color: var(--color-theme);
+}
+.bottom-footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 20px 0;
+  font-size: 1.2rem;
+}
+.bottom-footer__linksContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.bottom-footer__linksContainer a {
+  transition: var(--transition-300ms);
+}
+.bottom-footer__linksContainer a:hover {
+  color: var(--color-theme);
+}
 
 /* * ********BREAKPOINT 1440px******** * */
 @media screen and (max-width: 1440px) {
@@ -615,6 +684,12 @@ body {
 
   /* * ********SIDEMENU CONTAINER******** * */
   .side-menu__container.active {width: 55vw;}
+
+  /* * ********FOOTER******** * */
+  .footer-rows__container {
+    gap: 2.5rem 1rem;
+    flex-wrap: wrap;
+  }
 }
 
 /* * ********BREAKPOINT 576px******** * */
@@ -642,6 +717,14 @@ body {
 
   /* * ********SIDEMENU CONTAINER******** * */
   .side-menu__container.active { width: 95%; }
+
+  /* * ********FOOTER******** * */
+  .bottom-footer__linksContainer {
+    display: none;
+  }
+  .bottom-footer__container {
+    justify-content: center;
+  }
 }
 
 /* * ********BREAKPOINT 576px******** * */
